@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 13: Media Queries - Interactive Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>🎯 Day 13: Media Queries Tutorial</h1>
+        <p>Learn how to create responsive designs that adapt to any screen size</p>
+    </header>
+
+    <!-- Introduction -->
+    <section class="intro">
+        <h2>What are Media Queries?</h2>
+        <p>Media Queries are a powerful CSS feature that allows you to apply styles based on device characteristics like screen width, height, orientation, and resolution. They are the foundation of responsive web design.</p>
+        
+        <div class="key-concept">
+            <h3>🔑 Key Concept: @media Rule</h3>
+            <div class="code-block">
+                @media (condition) {<br>
+                &nbsp;&nbsp;/* CSS rules */<br>
+                }
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 1: Basic Media Queries -->
+    <section class="demo-section">
+        <h2>1. Basic Media Query Syntax</h2>
+        
+        <div class="demo-container">
+            <h3>max-width: Small screens (Mobile)</h3>
+            <p>Resize your browser to see the color change below 768px</p>
+            <div class="box max-width-demo">
+                I change color when screen is 768px or less!
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <h3>min-width: Large screens (Desktop)</h3>
+            <p>Resize your browser to see the color change above 1024px</p>
+            <div class="box min-width-demo">
+                I change color when screen is 1024px or wider!
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 2: Breakpoints -->
+    <section class="demo-section">
+        <h2>2. Common Breakpoints</h2>
+        <p>Breakpoints are the widths where the layout changes. Here are common device sizes:</p>
+        
+        <div class="breakpoints-info">
+            <div class="breakpoint-card mobile">
+                <h4>📱 Mobile</h4>
+                <p>max-width: 600px</p>
+            </div>
+            <div class="breakpoint-card tablet">
+                <h4>📲 Tablet</h4>
+                <p>max-width: 768px</p>
+            </div>
+            <div class="breakpoint-card laptop">
+                <h4>💻 Laptop</h4>
+                <p>min-width: 1024px</p>
+            </div>
+            <div class="breakpoint-card desktop">
+                <h4>🖥️ Desktop</h4>
+                <p>min-width: 1200px</p>
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <h3>Multiple Breakpoints Demo</h3>
+            <p>Resize browser to see all three breakpoints in action:</p>
+            <div class="breakpoint-demo">
+                <div class="demo-box">1</div>
+                <div class="demo-box">2</div>
+                <div class="demo-box">3</div>
+                <div class="demo-box">4</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Mobile-First Approach -->
+    <section class="demo-section">
+        <h2>3. Mobile-First Approach</h2>
+        <p>Design for mobile first, then add styles for larger screens using min-width.</p>
+        
+        <div class="approach-demo mobile-first-demo">
+            <div class="approach-header">Header</div>
+            <div class="approach-content">
+                <div class="approach-sidebar">Sidebar</div>
+                <div class="approach-main">Main Content</div>
+            </div>
+            <div class="approach-footer">Footer</div>
+        </div>
+
+        <div class="code-explanation">
+            <h3>How it works:</h3>
+            <ul>
+                <li>Base styles = Mobile (smallest screens)</li>
+                <li>@media (min-width: 768px) = Tablet styles</li>
+                <li>@media (min-width: 1024px) = Desktop styles</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section 4: Desktop-First Approach -->
+    <section class="demo-section">
+        <h2>4. Desktop-First Approach</h2>
+        <p>Design for desktop first, then adjust for smaller screens using max-width.</p>
+        
+        <div class="approach-demo desktop-first-demo">
+            <div class="approach-header">Header</div>
+            <div class="approach-content">
+                <div class="approach-main">Main Content</div>
+                <div class="approach-sidebar">Sidebar</div>
+            </div>
+            <div class="approach-footer">Footer</div>
+        </div>
+
+        <div class="code-explanation">
+            <h3>How it works:</h3>
+            <ul>
+                <li>Base styles = Desktop (largest screens)</li>
+                <li>@media (max-width: 1024px) = Laptop styles</li>
+                <li>@media (max-width: 768px) = Tablet/Mobile styles</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Section 5: Orientation -->
+    <section class="demo-section">
+        <h2>5. Device Orientation</h2>
+        
+        <div class="demo-container">
+            <h3>orientation: portrait</h3>
+            <p>Try rotating your device or resize browser to portrait mode</p>
+            <div class="box orientation-demo">
+                I'm taller than wide!
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <h3>orientation: landscape</h3>
+            <p>Try rotating your device or resize browser to landscape mode</p>
+            <div class="box orientation-landscape">
+                I'm wider than tall!
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Complex Breakpoints -->
+    <section class="demo-section">
+        <h2>6. Complex Media Queries</h2>
+        
+        <div class="demo-container">
+            <h3>Combining conditions with AND</h3>
+            <div class="box complex-demo">
+                Styles apply only when screen is between 768px AND 1024px!
+            </div>
+        </div>
+
+        <div class="demo-container">
+            <h3>Different styles for range</h3>
+            <div class="range-demo">
+                <div class="range-box">Small</div>
+                <div class="range-box">Medium</div>
+                <div class="range-box">Large</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Responsive Navigation -->
+    <section class="demo-section">
+        <h2>7. Responsive Navigation Example</h2>
+        
+        <div class="demo-container">
+            <h3>Navigation changes at breakpoints</h3>
+            <nav class="responsive-nav-demo">
+                <div class="nav-logo">Logo</div>
+                <ul class="nav-menu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Section 8: Responsive Grid -->
+    <section class="demo-section">
+        <h2>8. Responsive Grid Layout</h2>
+        
+        <div class="demo-container">
+            <h3>Grid that adapts to screen size</h3>
+            <div class="responsive-grid">
+                <div class="grid-card">Card 1</div>
+                <div class="grid-card">Card 2</div>
+                <div class="grid-card">Card 3</div>
+                <div class="grid-card">Card 4</div>
+                <div class="grid-card">Card 5</div>
+                <div class="grid-card">Card 6</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Summary -->
+    <section class="summary">
+        <h2>📋 Quick Reference Summary</h2>
+        <div class="summary-grid">
+            <div class="summary-card">
+                <h3>Media Query Types</h3>
+                <ul>
+                    <li><code>@media (max-width: x)</code> - Small screens</li>
+                    <li><code>@media (min-width: x)</code> - Large screens</li>
+                    <li><code>@media (orientation: portrait)</code></li>
+                    <li><code>@media (orientation: landscape)</code></li>
+                </ul>
+            </div>
+            <div class="summary-card">
+                <h3>Common Breakpoints</h3>
+                <ul>
+                    <li>Mobile: 600px</li>
+                    <li>Tablet: 768px</li>
+                    <li>Laptop: 1024px</li>
+                    <li>Desktop: 1200px</li>
+                </ul>
+            </div>
+            <div class="summary-card">
+                <h3>Best Practices</h3>
+                <ul>
+                    <li>Use mobile-first (recommended)</li>
+                    <li>Use em/rem for breakpoints</li>
+                    <li>Test on real devices</li>
+                    <li>Keep it simple!</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>🎯 Day 13: Media Queries - Complete!</p>
+        <p>Now you can create fully responsive websites!</p>
+    </footer>
+
+</body>
+</html>
+

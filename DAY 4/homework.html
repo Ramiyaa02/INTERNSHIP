@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Accessible Page</title>
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            color: #000; 
+        }
+        header, nav, main, footer {
+            margin-bottom: 20px;
+        }
+        nav a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #0066cc;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #4CAF50;
+            color: white;
+        }
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        form {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 15px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .skip-link {
+            position: absolute;
+            left: -9999px;
+            top: 0;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            z-index: 100;
+        }
+        .skip-link:focus {
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <a href="#maincontent" class="skip-link">Skip to main content</a>
+
+    <header>
+        <h1>My Learning Portfolio</h1>
+        <p>Accessible and semantic HTML in action</p>
+    </header>
+
+    <nav>
+        <a href="#hobbies">Hobbies</a>
+        <a href="#goals">Goals</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main id="maincontent">
+        <section id="hobbies">
+            <h2>My Hobbies (Unordered List)</h2>
+            <ul>
+                <li>Reading</li>
+                <li>Coding</li>
+                <li>Hiking</li>
+                <li>Gaming</li>
+                <li>Cooking</li>
+            </ul>
+        </section>
+
+        <section id="goals">
+            <h2>Top 5 Goals (Ordered List)</h2>
+            <ol>
+                <li>Master front-end development</li>
+                <li>Build a portfolio website</li>
+                <li>Learn a backend language</li>
+                <li>Contribute to open source</li>
+                <li>Get a developer job</li>
+            </ol>
+        </section>
+
+        <section id="schedule">
+            <h2>Weekly Schedule</h2>
+            <table>
+                <caption>My study and activities plan</caption>
+                <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Morning</th>
+                        <th>Afternoon</th>
+                        <th>Evening</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Monday</td><td>HTML/CSS</td><td>Practice</td><td>Rest</td></tr>
+                    <tr><td>Tuesday</td><td>JavaScript</td><td>Projects</td><td>Study</td></tr>
+                    <tr><td>Wednesday</td><td>Review</td><td>Coding challenge</td><td>Read docs</td></tr>
+                    <tr><td>Thursday</td><td>New topic</td><td>Practice</td><td>Rest</td></tr>
+                    <tr><td>Friday</td><td>Build project</td><td>Debug</td><td>Weekend prep</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 My Learning Portfolio. All rights reserved.</p>
+    </footer>
+</body>
+</html>

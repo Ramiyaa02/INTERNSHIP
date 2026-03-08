@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Landing Page - EcoBottle</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding-top: 60px; /* Space for fixed nav */
+        }
+        
+        /* Fixed Navigation Bar - stays at top while scrolling */
+        .fixed-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            padding: 15px 0;
+            z-index: 1000;
+        }
+        
+        .fixed-nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .fixed-nav ul li {
+            margin: 0 20px;
+        }
+        
+        .fixed-nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .fixed-nav ul li a:hover {
+            color: #4CAF50;
+        }
+        
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+        }
+        
+        /* Relative Positioning - element moved slightly from its normal position */
+        .hero h1 {
+            position: relative;
+            left: 10px; /* Moves 10px right from normal position */
+            color: #333;
+        }
+        
+        /* Product Image Container - for absolute positioning context */
+        .product-image {
+            position: relative; /* Makes this a positioned ancestor for absolute elements */
+            width: 300px;
+            margin: 30px auto;
+            border: 3px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            display: block;
+        }
+        
+        /* Absolute Positioning - badge positioned relative to product-image container */
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: red;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 40px 20px;
+            background-color: #f9f9f9;
+            margin: 20px 0;
+        }
+        
+        .features h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .feature-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 250px;
+            text-align: center;
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            padding: 40px 20px;
+        }
+        
+        .testimonials h2 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .testimonial {
+            background-color: #f0f0f0;
+            padding: 20px;
+            margin: 10px auto;
+            max-width: 600px;
+            border-radius: 8px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: 40px 20px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+        
+        /* Fixed Buy Button - stays in bottom-right corner while scrolling */
+        .fixed-buy {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+        }
+        
+        .fixed-buy:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Fixed Navigation Bar -->
+<nav class="fixed-nav">
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- Home Section -->
+<section id="home" class="hero">
+    <div class="container">
+        <!-- Relative Positioning: h1 moved slightly from its normal position -->
+        <h1>Welcome to EcoBottle</h1>
+        <p>The most eco-friendly water bottle you'll ever own!</p>
+        
+        <!-- Product Image Container with Absolute Positioning -->
+        <div class="product-image">
+            <img src="bottle.jpg" alt="EcoBottle">
+            <!-- Absolute Positioning: badge positioned relative to product-image -->
+            <span class="badge">20% OFF</span>
+        </div>
+    </div>
+</section>
+
+<!-- Features Section -->
+<section id="features" class="features">
+    <div class="container">
+        <h2>Our Features</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <h3>🌿 Eco-Friendly</h3>
+                <p>Made from 100% recycled materials</p>
+            </div>
+            <div class="feature-card">
+                <h3>💧 BPA Free</h3>
+                <p>Safe for you and the environment</p>
+            </div>
+            <div class="feature-card">
+                <h3>🔄 Reusable</h3>
+                <p>Use it again and again</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials">
+    <div class="container">
+        <h2>What Our Customers Say</h2>
+        <div class="testimonial">
+            <p>"Best bottle I've ever owned! Highly recommend EcoBottle."</p>
+            <strong>- Sarah J.</strong>
+        </div>
+        <div class="testimonial">
+            <p>"Great quality and really helps me stay hydrated throughout the day."</p>
+            <strong>- Mike T.</strong>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>Email: info@ecobottle.com</p>
+        <p>Phone: (555) 123-4567</p>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+    <p>&copy; 2024 EcoBottle. All rights reserved.</p>
+</footer>
+
+<!-- Fixed Buy Button - stays in bottom-right while scrolling -->
+<a href="#" class="fixed-buy">Buy Now</a>
+
+</body>
+</html>
+

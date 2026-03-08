@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 18: Website Project - Part 2 (Styling)</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Header with Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <a href="#" class="logo">DevPortfolio</a>
+                <ul class="nav-menu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-subtitle">Hello, I'm</span>
+                <h1>John Developer</h1>
+                <p class="hero-text">I create beautiful, responsive websites that help businesses grow and engage their audience.</p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn btn-primary">View My Work</a>
+                    <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="profile-card">
+                    <div class="profile-placeholder">JD</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">My Services</h2>
+            <p class="section-subtitle">What I can do for you</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Web Design</h3>
+                    <p>Beautiful, modern designs that capture your brand identity and engage your audience.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3>Web Development</h3>
+                    <p>Clean, efficient code using modern technologies like HTML5, CSS3, and JavaScript.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3>Responsive Design</h3>
+                    <p>Websites that look great on all devices, from mobile phones to desktop computers.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3>Performance</h3>
+                    <p>Fast-loading websites optimized for the best user experience and SEO.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-wrapper">
+                <div class="about-image">
+                    <div class="image-frame">
+                        <div class="image-placeholder">About Me</div>
+                    </div>
+                </div>
+                <div class="about-content">
+                    <h2 class="section-title">About Me</h2>
+                    <p>I'm a passionate web developer with over 5 years of experience creating digital experiences. I love turning complex problems into simple, beautiful solutions.</p>
+                    <p>My approach focuses on clean code, user experience, and modern design principles. I believe that great websites should be both functional and visually appealing.</p>
+                    
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">30+</span>
+                            <span class="stat-label">Clients</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <h2 class="section-title">My Portfolio</h2>
+            <p class="section-subtitle">Recent projects I've worked on</p>
+            
+            <div class="portfolio-grid">
+                <article class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <span>E-Commerce Site</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>E-Commerce Platform</h3>
+                        <p>Full-stack e-commerce solution with payment integration.</p>
+                        <div class="portfolio-tags">
+                            <span>React</span>
+                            <span>Node.js</span>
+                            <span>MongoDB</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <span>Dashboard App</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Analytics Dashboard</h3>
+                        <p>Real-time data visualization and analytics platform.</p>
+                        <div class="portfolio-tags">
+                            <span>Vue.js</span>
+                            <span>D3.js</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <span>Mobile App</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Fitness App</h3>
+                        <p>Mobile application for tracking workouts and nutrition.</p>
+                        <div class="portfolio-tags">
+                            <span>React Native</span>
+                            <span>Firebase</span>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="portfolio-item">
+                    <div class="portfolio-image">
+                        <div class="portfolio-overlay">
+                            <span>Portfolio Site</span>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h3>Creative Portfolio</h3>
+                        <p>Personal portfolio website for a photographer.</p>
+                        <div class="portfolio-tags">
+                            <span>HTML</span>
+                            <span>CSS</span>
+                            <span>JavaScript</span>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <p class="section-subtitle">Let's work together</p>
+            
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">📧</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>hello@johndeveloper.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📱</div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>(555) 123-4567</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div>
+                            <h4>Location</h4>
+                            <p>San Francisco, CA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>DevPortfolio</h3>
+                    <p>Creating digital experiences that matter.</p>
+                    <div class="social-links">
+                        <a href="#">GitHub</a>
+                        <a href="#">LinkedIn</a>
+                        <a href="#">Twitter</a>
+                        <a href="#">Instagram</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Web Design</a></li>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Responsive Design</a></li>
+                        <li><a href="#">Consulting</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 DevPortfolio. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
+

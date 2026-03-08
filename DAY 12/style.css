@@ -1,0 +1,599 @@
+/* ============================================
+   Day 12: CSS Grid Layout Tutorial - Complete CSS
+   ============================================ */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+/* Sections */
+section {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+/* Introduction */
+.intro {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+.intro h2 {
+    color: #11998e;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.intro > p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.key-concept {
+    background-color: #e8f8f5;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid #11998e;
+    margin-bottom: 20px;
+}
+
+.key-concept:last-child {
+    margin-bottom: 0;
+}
+
+.key-concept h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.key-concept ul {
+    list-style: none;
+}
+
+.key-concept ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.key-concept code {
+    background-color: #11998e;
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+}
+
+/* Demo Section */
+.demo-section {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.demo-section h2 {
+    color: #11998e;
+    font-size: 32px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #e8f8f5;
+}
+
+.demo-section > p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.demo-container {
+    margin-bottom: 35px;
+    padding: 25px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+}
+
+.demo-container h3 {
+    color: #444;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+/* ============================================
+   GRID CONTAINER BASE STYLES
+   ============================================ */
+
+.grid-container {
+    display: grid;
+    background-color: #e8f8f5;
+    border: 2px dashed #11998e;
+    padding: 15px;
+    border-radius: 8px;
+    min-height: 150px;
+}
+
+.grid-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    text-align: center;
+    min-height: 60px;
+}
+
+.item-1 { background-color: #e74c3c; }
+.item-2 { background-color: #3498db; }
+.item-3 { background-color: #2ecc71; }
+.item-4 { background-color: #f39c12; }
+.item-5 { background-color: #9b59b6; }
+.item-6 { background-color: #1abc9c; }
+.item-7 { background-color: #e67e22; }
+.item-8 { background-color: #34495e; }
+.item-9 { background-color: #16a085; }
+
+/* ============================================
+   GRID TEMPLATE COLUMNS
+   ============================================ */
+
+.grid-columns-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+
+.grid-columns-mixed {
+    grid-template-columns: 200px 1fr 2fr;
+    gap: 10px;
+}
+
+.grid-columns-percent {
+    grid-template-columns: 25% 50% 25%;
+    gap: 10px;
+}
+
+.grid-columns-repeat {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+/* ============================================
+   GRID TEMPLATE ROWS
+   ============================================ */
+
+.grid-rows-explicit {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px auto 150px;
+    gap: 10px;
+}
+
+.grid-rows-minmax {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, minmax(80px, auto));
+    gap: 10px;
+}
+
+.grid-rows-2 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+}
+
+/* ============================================
+   GRID TEMPLATE AREAS
+   ============================================ */
+
+.grid-areas {
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+        "header header header"
+        "main main sidebar"
+        "footer footer footer";
+    gap: 10px;
+    min-height: 300px;
+}
+
+.header-area {
+    grid-area: header;
+    background-color: #3498db;
+}
+
+.main-area {
+    grid-area: main;
+    background-color: #2ecc71;
+}
+
+.sidebar-area {
+    grid-area: sidebar;
+    background-color: #f39c12;
+}
+
+.footer-area {
+    grid-area: footer;
+    background-color: #9b59b6;
+}
+
+.grid-areas-complex {
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 150px 80px;
+    grid-template-areas: 
+        "hero hero ads1"
+        "content ads2 ads2"
+        "footer footer footer";
+    gap: 10px;
+    min-height: 350px;
+}
+
+.area-hero {
+    grid-area: hero;
+    background-color: #e74c3c;
+}
+
+.area-ads1 {
+    grid-area: ads1;
+    background-color: #f39c12;
+}
+
+.area-ads2 {
+    grid-area: ads2;
+    background-color: #f39c12;
+}
+
+.area-content {
+    grid-area: content;
+    background-color: #2ecc71;
+}
+
+.area-footer {
+    grid-area: footer;
+    background-color: #9b59b6;
+}
+
+/* ============================================
+   GRID GAP
+   ============================================ */
+
+.grid-gap-20 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid-gap-separate {
+    grid-template-columns: repeat(3, 1fr);
+    grid-row-gap: 10px;
+    grid-column-gap: 30px;
+}
+
+/* ============================================
+   POSITIONING GRID ITEMS
+   ============================================ */
+
+.column-span {
+    grid-column: 1 / 3;
+}
+
+.row-span {
+    grid-row: 1 / 3;
+}
+
+.both-span {
+    grid-column: 1 / 3;
+    grid-row: 1 / 3;
+}
+
+.grid-both-span {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 80px);
+    gap: 10px;
+}
+
+/* ============================================
+   DASHBOARD EXAMPLE
+   ============================================ */
+
+.dashboard-demo {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 60px 1fr 50px;
+    grid-template-areas: 
+        "header header"
+        "sidebar main"
+        "footer footer";
+    gap: 10px;
+    min-height: 350px;
+    padding: 10px;
+}
+
+.dash-header {
+    grid-area: header;
+    background-color: #3498db;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.dash-sidebar {
+    grid-area: sidebar;
+    background-color: #2c3e50;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.dash-main {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+.dash-card {
+    background-color: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #333;
+    min-height: 80px;
+}
+
+.dash-footer {
+    grid-area: footer;
+    background-color: #9b59b6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+/* ============================================
+   RESPONSIVE GRID
+   ============================================ */
+
+.grid-responsive {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+}
+
+/* ============================================
+   JUSTIFY AND ALIGN
+   ============================================ */
+
+.grid-justify-center {
+    grid-template-columns: repeat(3, 150px);
+    justify-content: center;
+    gap: 10px;
+}
+
+.grid-align-demo {
+    min-height: 300px;
+}
+
+.grid-align-center {
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(2, 80px);
+    align-content: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* ============================================
+   SUMMARY SECTION
+   ============================================ */
+
+.summary {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.summary h2 {
+    color: #11998e;
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.summary-card {
+    background-color: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid #e8f8f5;
+}
+
+.summary-card h3 {
+    color: #11998e;
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #11998e;
+}
+
+.summary-card ul {
+    list-style: none;
+}
+
+.summary-card ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+    padding: 5px;
+}
+
+.summary-card code {
+    background-color: #11998e;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+}
+
+footer p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+footer p:first-child {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 36px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    .demo-section {
+        padding: 25px;
+    }
+
+    .demo-section h2 {
+        font-size: 26px;
+    }
+
+    .grid-areas {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "header"
+            "main"
+            "sidebar"
+            "footer";
+    }
+
+    .grid-areas-complex {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "hero"
+            "content"
+            "ads1"
+            "ads2"
+            "footer";
+    }
+
+    .dashboard-demo {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: 
+            "header"
+            "sidebar"
+            "main"
+            "footer";
+    }
+
+    .dash-main {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-container {
+        min-height: 100px;
+    }
+
+    .grid-item {
+        padding: 15px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    .intro, .demo-section, .summary {
+        padding: 20px;
+    }
+
+    .grid-columns-mixed {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-columns-3 {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-columns-repeat {
+        grid-template-columns: 1fr;
+    }
+}
+

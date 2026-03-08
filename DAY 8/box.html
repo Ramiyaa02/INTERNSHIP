@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">        
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model Example</title>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            border: 5px solid blue;
+            padding: 20px;
+            margin: 30px;
+        }
+        .card {
+    background-color: #f9f9f9;
+    width: 300px;
+    border: 2px solid #aaa;
+}
+
+.card {
+    padding: 20px; /* all sides */
+}
+
+/* I also tried padding: 10px 30px; (top/bottom 10px, left/right 30px) */
+.box1 {
+    margin-bottom: 30px;
+    background: lightcoral;
+}
+.box2 {
+    margin-top: 20px;
+    background: lightseagreen;
+}
+div {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 10px;
+    background: lightgreen;
+}
+
+.content-box {
+    box-sizing: content-box; /* default */
+}
+
+.border-box {
+    box-sizing: border-box;
+}
+
+    </style>
+</head>
+<body>      
+    <div class="box">
+        This is a box model example.
+    </div>
+    <div class="card">
+    <h2>Card Title</h2>
+    <p>This card has padding inside. The text doesn't touch the edges.</p>
+    <div class="box1">Box 1</div>
+<div class="box2">Box 2</div>
+<div class="content-box">Content-box</div>
+<div class="border-box">Border-box</div>
+</div>
+</body>
+
+</html>

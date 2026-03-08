@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Quick Reference Guide</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f7fa;
+            padding: 20px;
+        }
+
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background-color: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 25px;
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 26px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f4ff;
+        }
+
+        .property {
+            margin-bottom: 25px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+
+        .property h3 {
+            color: #2c3e50;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .property p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .values {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .value {
+            background-color: #667eea;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .example {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            overflow-x: auto;
+        }
+
+        .example .comment {
+            color: #95a5a6;
+        }
+
+        code {
+            background-color: #667eea;
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+
+        .cheat-sheet {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .cheat-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .cheat-card h3 {
+            color: #667eea;
+            font-size: 20px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #667eea;
+        }
+
+        .cheat-card ul {
+            list-style: none;
+        }
+
+        .cheat-card ul li {
+            margin-bottom: 10px;
+            padding: 8px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 28px;
+            }
+
+            .section {
+                padding: 20px;
+            }
+
+            .property {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>📋 Flexbox Quick Reference Guide</h1>
+            <p>Your complete cheat sheet for Flexbox properties</p>
+        </header>
+
+        <!-- Container Properties -->
+        <div class="section">
+            <h2>🔧 Container Properties</h2>
+            
+            <div class="property">
+                <h3>display: flex</h3>
+                <p>Enables flexbox for the container. All direct children become flex items.</p>
+                <div class="example">
+                    <span class="comment">/* Makes the element a flex container */</span><br>
+                    .container {<br>
+                    &nbsp;&nbsp;display: flex;<br>
+                    }
+                </div>
+            </div>
+
+            <div class="property">
+                <h3>flex-direction</h3>
+                <p>Defines the direction flex items are placed in the container.</p>
+                <div class="values">
+                    <span class="value">row</span>
+                    <span class="value">row-reverse</span>
+                    <span class="value">column</span>
+                    <span class="value">column-reverse</span>
+                </div>
+                <div class="example">
+                    <span class="comment">/* Items in a horizontal row */</span><br>
+                    .container {<br>
+                    &nbsp;&nbsp;flex-direction: row;<br>
+                    }
+                </div>
+            </div>
+
+            <div class="property">
+                <h3>flex-wrap</h3>
+                <p>Controls whether flex items should wrap or not.</p>
+                <div class="values">
+                    <span class="value">nowrap</span>
+                    <span class="value">wrap</span>
+                    <span class="value">wrap-reverse</span>
+                </div>
+                <div class="example">
+                    <span class="comment">/* Items wrap onto multiple lines */</span><br>
+                    .container {<br>
+                    &nbsp;&nbsp;flex-wrap: wrap;<br>
+                    }
+                </div>
+            </div>
+
+            <div class="property">
+                <h3>justify-content</h3>
+                <p>Aligns flex items along the main axis (horizontal in row direction).</p>
+                <div class="values">
+                    <span class="value">flex-start</span>
+                    <span class="value">flex-end</span>
+                    <span class="value">center</span>
+                    <span class="value">space-between</span>
+                    <span class="value">space-around</span>
+                    <span class="value">space-evenly</span>
+                </div>
+                <div class="example">
+                    <span class="comment">/* Items centered horizontally */</span><br>
+                    .container {<br>
+                    &nbsp;&nbsp;justify-content: center;<br>
+                    }
+                </div>
+            </div>
+
+            <div class="property">
+                <h3>align-items</h3>
+                <p>Aligns flex items along the cross axis (vertical in row direction).</p>
+                <div class="values">
+                    <span class="value">flex-start</span>
+                    <span class="value">flex-end</span>
+                    <span class="value">center</span>
+                    <span class="value">baseline</span>
+                    <span class="value">stretch</span>
+                </div>
+                <div class="example">
+                    <span class="comment">/* Items centered vertically */</span><br>
+                    .container {<br>
+                    &nbsp;&nbsp;align-items: center;<br>
+                    }
+                </div>
+            </div>
+
+            <div class="property">
+                <h3>align-content</h3>
+                <p>Aligns lines within a flex container when there's extra space in the cross-axis.</p>
+                <div class="values">
+                    <span class="value">flex-start</span>
+                    <span class="value">flex-end</span>
+                    <span class="value">center</span>
+                    <span class="value">space-between</span>
+                    <span class="value">space-around</span>
+                    <span class="value">stretch</span>
+                </div>
+            </div>
+
+            <div class="property">
+                <h3>gap</h3>
+                <p>Sets the space between flex items.</p>
+                <div class="example">
+                    <span class="comment">/* 20px gap between items */</span><br>
+                    .container {<br>
+                    &nbsp;&nbsp;gap: 20px;<br>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Item Properties -->
+        <div class="section">
+            <h2>📦 Flex Item Properties</h2>
+            
+            <div class="property">
+                <h3>flex-grow</h3>
+                <p>Defines the ability for a flex item to grow if necessary. Default is 0.</p>
+                <div class="example">
+                    <span class="comment">/* Item will grow to fill available space */</span><br>
+                    .item {<br>
+                    &nbsp;&nbsp;flex-grow: 1;<br>
+                    }
+                </div>
+            </div>
+
+            <div class="property">
+                <h3>flex-shrink</h3>
+                <p>Defines the ability for a flex item to shrink if necessary. Default is 1.</p>
+                <div class="example">
+                    <span class="comment">/* Item won't shrink */</span><br>
+                    .item {<br>
+                    &nbsp;&nbsp;flex-shrink: 0;<br>
+                    }
+                </div>
+            </div>
+
+            <div class="property">
+                <h3>flex-basis</h3>
+                <p>Defines the default size of an element before remaining space is distributed.</p>
+                <div class="example">
+                    <span class="comment">/* Initial size of 200px */</span><br>
+                    .item {<br>
+                    &nbsp;&nbsp;flex-basis: 200px;<br>
+                    }
+                </div>
+            </div>
+
+            <div class="property">
+                <h3>flex</h3>
+                <p>Shorthand for flex-grow, flex-shrink, and flex-basis combined.</p>
+                <div class="example">
+                    <span class="comment">/* flex: grow shrink basis */</span><br>
+                    .item {<br>
+                    &nbsp;&nbsp;flex: 1 0 200px;<br>
+                    }<br><br>
+                    <span class="comment">/* Common shorthand */</span><br>
+                    .item { flex: 1; }  <span class="comment">/* flex: 1 1 0% */</span><br>
+                    .item { flex: auto; }  <span class="comment">/* flex: 1 1 auto */</span><br>
+                    .item { flex: none; }  <span class="comment">/* flex: 0 0 auto */</span>
+                </div>
+            </div>
+
+            <div class="property">
+                <h3>align-self</h3>
+                <p>Allows the default alignment (or the one specified by align-items) to be overridden.</p>
+                <div class="values">
+                    <span class="value">auto</span>
+                    <span class="value">flex-start</span>
+                    <span class="value">flex-end</span>
+                    <span class="value">center</span>
+                    <span class="value">baseline</span>
+                    <span class="value">stretch</span>
+                </div>
+                <div class="example">
+                    <span class="comment">/* This item will be aligned to the end */</span><br>
+                    .item {<br>
+                    &nbsp;&nbsp;align-self: flex-end;<br>
+                    }
+                </div>
+            </div>
+
+            <div class="property">
+                <h3>order</h3>
+                <p>Controls the order in which flex items appear in the flex container.</p>
+                <div class="example">
+                    <span class="comment">/* Item will appear first regardless of HTML order */</span><br>
+                    .item {<br>
+                    &nbsp;&nbsp;order: -1;<br>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Cheat Sheet -->
+        <div class="section">
+            <h2>⚡ Quick Cheat Sheet</h2>
+            <div class="cheat-sheet">
+                <div class="cheat-card">
+                    <h3>🎯 Centering</h3>
+                    <ul>
+                        <li><code>display: flex</code></li>
+                        <li><code>justify-content: center</code></li>
+                        <li><code>align-items: center</code></li>
+                    </ul>
+                </div>
+                <div class="cheat-card">
+                    <h3>📐 Space Between</h3>
+                    <ul>
+                        <li><code>display: flex</code></li>
+                        <li><code>justify-content: space-between</code></li>
+                    </ul>
+                </div>
+                <div class="cheat-card">
+                    <h3>📱 Responsive Grid</h3>
+                    <ul>
+                        <li><code>display: flex</code></li>
+                        <li><code>flex-wrap: wrap</code></li>
+                        <li><code>gap: 20px</code></li>
+                    </ul>
+                </div>
+                <div class="cheat-card">
+                    <h3>↕️ Vertical Stack</h3>
+                    <ul>
+                        <li><code>display: flex</code></li>
+                        <li><code>flex-direction: column</code></li>
+                        <li><code>gap: 15px</code></li>
+                    </ul>
+                </div>
+                <div class="cheat-card">
+                    <h3>🔄 Equal Columns</h3>
+                    <ul>
+                        <li><code>flex: 1</code> on each item</li>
+                        <li>or <code>flex-basis: 0</code></li>
+                    </ul>
+                </div>
+                <div class="cheat-card">
+                    <h3>🎨 Navbar</h3>
+                    <ul>
+                        <li><code>display: flex</code></li>
+                        <li><code>justify-content: space-between</code></li>
+                        <li><code>align-items: center</code></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual Aid -->
+        <div class="section">
+            <h2>📊 Main Axis vs Cross Axis</h2>
+            <div style="background-color: #f8f9fa; padding: 25px; border-radius: 10px;">
+                <p style="margin-bottom: 15px;"><strong>When flex-direction is "row":</strong></p>
+                <ul style="margin-left: 20px; margin-bottom: 20px;">
+                    <li>Main Axis = <strong>Horizontal</strong> (left to right)</li>
+                    <li>Cross Axis = <strong>Vertical</strong> (top to bottom)</li>
+                    <li>justify-content = <strong>Horizontal alignment</strong></li>
+                    <li>align-items = <strong>Vertical alignment</strong></li>
+                </ul>
+                
+                <p style="margin-bottom: 15px;"><strong>When flex-direction is "column":</strong></p>
+                <ul style="margin-left: 20px;">
+                    <li>Main Axis = <strong>Vertical</strong> (top to bottom)</li>
+                    <li>Cross Axis = <strong>Horizontal</strong> (left to right)</li>
+                    <li>justify-content = <strong>Vertical alignment</strong></li>
+                    <li>align-items = <strong>Horizontal alignment</strong></li>
+                </ul>
+            </div>
+        </div>
+
+        <footer>
+            <p>📚 Day 11: Flexbox - Quick Reference Guide</p>
+            <p>Keep this handy for quick lookups!</p>
+        </footer>
+    </div>
+
+</body>
+</html>
+

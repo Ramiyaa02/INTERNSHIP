@@ -1,0 +1,699 @@
+/* ============================================
+   Day 13: Media Queries Tutorial - Complete CSS
+   ============================================ */
+
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f7fa;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 48px;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+header p {
+    font-size: 20px;
+    opacity: 0.9;
+}
+
+/* Sections */
+section {
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 0 20px;
+}
+
+/* Introduction */
+.intro {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 50px;
+}
+
+.intro h2 {
+    color: #f5576c;
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.intro > p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 25px;
+}
+
+.key-concept {
+    background-color: #fff0f3;
+    padding: 25px;
+    border-radius: 10px;
+    border-left: 4px solid #f5576c;
+}
+
+.key-concept h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.code-block {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Courier New', monospace;
+    font-size: 16px;
+    overflow-x: auto;
+}
+
+/* Demo Section */
+.demo-section {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.demo-section h2 {
+    color: #f5576c;
+    font-size: 32px;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #fff0f3;
+}
+
+.demo-section > p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.demo-container {
+    margin-bottom: 35px;
+    padding: 25px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    border: 1px solid #e0e0e0;
+}
+
+.demo-container h3 {
+    color: #444;
+    font-size: 18px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+
+.demo-container p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* ============================================
+   BOX STYLES
+   ============================================ */
+
+.box {
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+/* max-width demo - default (large screen) */
+.max-width-demo {
+    background-color: #3498db;
+    color: white;
+}
+
+/* max-width demo - small screen */
+@media (max-width: 768px) {
+    .max-width-demo {
+        background-color: #e74c3c;
+    }
+}
+
+/* min-width demo - default (small screen) */
+.min-width-demo {
+    background-color: #e74c3c;
+    color: white;
+}
+
+/* min-width demo - large screen */
+@media (min-width: 1024px) {
+    .min-width-demo {
+        background-color: #2ecc71;
+    }
+}
+
+/* ============================================
+   BREAKPOINTS INFO
+   ============================================ */
+
+.breakpoints-info {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+.breakpoint-card {
+    flex: 1;
+    min-width: 200px;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.breakpoint-card h4 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.breakpoint-card p {
+    font-size: 14px;
+    font-family: 'Courier New', monospace;
+}
+
+.breakpoint-card.mobile {
+    background-color: #ff7675;
+    color: white;
+}
+
+.breakpoint-card.tablet {
+    background-color: #fdcb6e;
+    color: #333;
+}
+
+.breakpoint-card.laptop {
+    background-color: #74b9ff;
+    color: white;
+}
+
+.breakpoint-card.desktop {
+    background-color: #00cec9;
+    color: white;
+}
+
+/* ============================================
+   BREAKPOINT DEMO
+   ============================================ */
+
+.breakpoint-demo {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.demo-box {
+    flex: 1;
+    min-width: 100px;
+    padding: 30px;
+    background-color: #f5576c;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .breakpoint-demo .demo-box {
+        background-color: #f093fb;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .breakpoint-demo .demo-box {
+        flex-basis: 100%;
+        background-color: #74b9ff;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .breakpoint-demo .demo-box {
+        background-color: #00cec9;
+    }
+}
+
+/* ============================================
+   APPROACH DEMOS
+   ============================================ */
+
+.approach-demo {
+    background-color: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.approach-header {
+    background-color: #3498db;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.approach-content {
+    display: flex;
+    min-height: 150px;
+}
+
+.approach-sidebar {
+    background-color: #f39c12;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.approach-main {
+    background-color: #2ecc71;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.approach-footer {
+    background-color: #9b59b6;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Mobile-First Demo */
+.mobile-first-demo {
+    /* Default = Mobile: stacked layout */
+}
+
+.mobile-first-demo .approach-content {
+    flex-direction: column;
+}
+
+.mobile-first-demo .approach-sidebar {
+    order: 2;
+}
+
+.mobile-first-demo .approach-main {
+    order: 1;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .mobile-first-demo .approach-content {
+        flex-direction: row;
+    }
+    
+    .mobile-first-demo .approach-sidebar {
+        width: 30%;
+        order: 1;
+    }
+    
+    .mobile-first-demo .approach-main {
+        flex: 1;
+        order: 2;
+    }
+}
+
+/* Desktop-First Demo */
+.desktop-first-demo .approach-content {
+    flex-direction: row;
+}
+
+.desktop-first-demo .approach-sidebar {
+    width: 30%;
+}
+
+/* Laptop */
+@media (max-width: 1024px) {
+    .desktop-first-demo .approach-content {
+        flex-direction: column;
+    }
+    
+    .desktop-first-demo .approach-sidebar {
+        width: 100%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .desktop-first-demo .approach-content {
+        flex-direction: column;
+    }
+    
+    .desktop-first-demo .approach-sidebar {
+        width: 100%;
+    }
+}
+
+.code-explanation {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.code-explanation h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.code-explanation ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.code-explanation ul li {
+    padding: 8px 0;
+    color: #666;
+}
+
+/* ============================================
+   ORIENTATION DEMOS
+   ============================================ */
+
+.orientation-demo {
+    background-color: #3498db;
+    color: white;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (orientation: portrait) {
+    .orientation-demo {
+        background-color: #e74c3c;
+    }
+}
+
+.orientation-landscape {
+    background-color: #3498db;
+    color: white;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@media (orientation: landscape) {
+    .orientation-landscape {
+        background-color: #2ecc71;
+    }
+}
+
+/* ============================================
+   COMPLEX DEMOS
+   ============================================ */
+
+.complex-demo {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Between 768px and 1024px */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .complex-demo {
+        background-color: #9b59b6;
+    }
+}
+
+.range-demo {
+    display: flex;
+    gap: 15px;
+}
+
+.range-box {
+    flex: 1;
+    padding: 25px;
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+/* Medium screens */
+@media (max-width: 768px) {
+    .range-demo {
+        flex-direction: column;
+    }
+    
+    .range-box {
+        background-color: #f093fb;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1024px) {
+    .range-box {
+        background-color: #00cec9;
+    }
+}
+
+/* ============================================
+   RESPONSIVE NAVIGATION
+   ============================================ */
+
+.responsive-nav-demo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2c3e50;
+    padding: 15px 20px;
+    border-radius: 8px;
+    flex-wrap: wrap;
+}
+
+.responsive-nav-demo .nav-logo {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.responsive-nav-demo .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin: 0;
+    padding: 0;
+}
+
+.responsive-nav-demo .nav-menu li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.responsive-nav-demo .nav-menu li a:hover {
+    color: #f5576c;
+}
+
+/* Mobile navigation */
+@media (max-width: 768px) {
+    .responsive-nav-demo {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .responsive-nav-demo .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+}
+
+/* ============================================
+   RESPONSIVE GRID
+   ============================================ */
+
+.responsive-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.grid-card {
+    background-color: white;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 25px;
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .responsive-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .responsive-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   SUMMARY SECTION
+   ============================================ */
+
+.summary {
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
+}
+
+.summary h2 {
+    color: #f5576c;
+    font-size: 32px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.summary-card {
+    background-color: #f8f9fa;
+    padding: 25px;
+    border-radius: 10px;
+    border: 2px solid #fff0f3;
+}
+
+.summary-card h3 {
+    color: #f5576c;
+    font-size: 20px;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f5576c;
+}
+
+.summary-card ul {
+    list-style: none;
+}
+
+.summary-card ul li {
+    margin-bottom: 10px;
+    font-size: 14px;
+    color: #555;
+    padding: 5px;
+}
+
+.summary-card code {
+    background-color: #f5576c;
+    color: white;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+}
+
+footer p {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+footer p:first-child {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 36px;
+    }
+
+    header p {
+        font-size: 16px;
+    }
+
+    .demo-section {
+        padding: 25px;
+    }
+
+    .demo-section h2 {
+        font-size: 26px;
+    }
+
+    .breakpoints-info {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 28px;
+    }
+
+    .intro, .demo-section, .summary {
+        padding: 20px;
+    }
+
+    .box {
+        padding: 20px;
+        font-size: 16px;
+    }
+}
+

@@ -1,0 +1,21 @@
+.block {
+    display: block;
+    background: lightcoral;
+    margin-bottom: 10px;
+}
+.inline {
+    display: inline;
+    background: lightblue;
+    width: 200px;  /* ignored because inline */
+    height: 50px;   /* ignored */
+}
+.inline-block {
+    display: inline-block;
+    background: lightgreen;
+    width: 200px;
+    height: 80px;
+    margin: 5px;
+}
+.hidden {
+    display: none;
+}
